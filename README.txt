@@ -2,64 +2,66 @@
   setpano.htm  ver.1.0
 ========== ========== ==========
 
-�y �\�t�g�� �z�p�m���}�z�u(��)
-�y �� �� �� �z���R������w
-�y  ��  ��  �zpcd�쐬�pauthoring�\�t�g
-�y �J���� �zhtm
-�y ����� �zJavaScript ���g�p�ł���E�F�u�u���E�U
-�y�o�[�W�����z1.0
-�y�ŏI�X�V���z2009/09/14
-�y�t�@�C�����zsetpano.htm
+【 ソフト名 】パノラマ配置(β)
+【 製 作 者 】岡山県立大学
+【  種  別  】pcd作成用authoringソフト
+【 開発環境 】htm
+【 動作環境 】JavaScript が使用できるウェブブラウザ
+【バージョン】1.0
+【最終更新日】2009/09/14
+【ファイル名】setpano.htm
 ---------- ----------
-�� �T�v ��
-�p�m���}�摜�Ɋւ�������L�q����XML�t�@�C�����쐬����authoring�\�t�g�B
-�ȉ��̏����L�q�A
-�E�p�m���}ID
-�E�C���[�W�摜�̃t�@�C����
-�E�摜�̑傫��
-�E�ʒu���i�o�x�E�ܓx�j
-�E���ʏ��i�k�j
+◇ 概要 ◇
+パノラマ画像に関する情報を記述したXMLファイルを作成するauthoringソフト。
+以下の情報を記述、
+・パノラマID
+・イメージ画像のファイル名
+・画像の大きさ
+・位置情報（経度・緯度）
+・方位情報（北）
 
-�� ������� ��
-�EApache HTTP Server 2.0 �ȏ�
+◇ 動作条件 ◇
+・Apache HTTP Server 2.0 以上
 
-�� �t�@�C���\�� ��
+◇ ファイル構成 ◇
 http://localhost/authoring
-�b  setpano.htm		�yauthoring�p�z
-�b  pasq.php
-�b  PTViewer.jar
-�b  style.css
-�b  DEWSptv.jar
-�b  README.txt
-�b  
-�b
-���\resource
-�b�@�b ����.jpg 	�ypcd�쐬�p�p�m���}�摜�z
-�b�@�b  :
-�b�@�b ����.jpg
-�b�@�� pcd_opu.xml�@	�ypcd�쐬���ɐ����@���݃t�@�C�����͌Œ�z
-�b
-���\js
-�b�@�b jkl-debug.js
-�b�@�b jkl-parsexml.js
-�b�@�b ObjTree.js
-�b�@�b prototype.js
-�b�@�� xmlhttp.js
-�b
-���\image		�y�}�[�J�[��n�}�摜�z
+｜  setpano.htm		【authoring用】
+｜  pasq.php
+｜  PTViewer.jar
+｜  style.css
+｜  DEWSptv.jar
+｜  README.txt
+｜  
+｜
+├—resource
+｜　｜ ○○.jpg 	【pcd作成用パノラマ画像】
+｜　｜  :
+｜　｜ ○○.jpg
+｜　└ pcd_opu.xml　	【pcd作成時に生成　現在ファイル名は固定】
+｜
+├—js
+｜　｜ jkl-debug.js
+｜　｜ jkl-parsexml.js
+｜　｜ ObjTree.js
+｜　｜ prototype.js
+｜　└ xmlhttp.js
+｜
+└—image		【マーカーや地図画像】
 
-�� �������� ��
-�E�V�K�쐬		�}�b�v�̏�����
-�E�ǂݍ���		resource�t�H���_����xml�t�@�C�����J��
-�E�ۑ�			�t�@�C���̕ۑ��i�t�@�C������pcd_opu.xml�ɂ���j
-�E���ʏ��ݒ�		�k�����L�q�i�摜�̉��s�N�Z���Őݒ�j
-�E�X�^�[�g�p�m�ݒ�	PasQ�ɂĉ摜�\�����ɍŏ��ɕ\������p�m���}�摜�E�����̐ݒ�
-�E�p�m���}�z�u		resource�t�H���_���̃p�m���}�摜���P���z�u
-�E�ꊇ�z�u		�J�n�E�I���n�_�����߁A�p�m���}�摜���ꊇ�z�u�i�꒼���̂݁j
-�E�ߖT�p�m���}�\��	�ؑւ���E�ؑւ��͈͂�\��
+◇ つかいかた ◇
+・新規作成		マップの初期化
+・読み込み		resourceフォルダ内のxmlファイルを開く
+・保存			ファイルの保存（ファイル名をpcd_opu.xmlにする）
+・方位情報設定		北情報を記述（画像の横ピクセルで設定）
+・スタートパノ設定	PasQにて画像表示時に最初に表示するパノラマ画像・向きの設定
+・パノラマ配置		resourceフォルダ内のパノラマ画像を１つずつ配置
+・一括配置		開始・終了地点を決め、パノラマ画像を一括配置（一直線のみ）
+・近傍パノラマ表示	切替え先・切替え範囲を表示
   
-�� FAQ�E���m�̃o�O ��
-�Epcd�쐬���̃t�@�C������pcd_opu.xml�ɂ���K�v����B
-�E�ߖT�p�m���}�\�����A�ؑւ��悪�P�ӏ������Ȃ��ꍇ�ɃG���[�B
+◇ FAQ・既知のバグ ◇
+・pcd作成時のファイル名をpcd_opu.xmlにする必要あり。
+・近傍パノラマ表示時、切替え先が１箇所しかない場合にエラー。
+
+使い方の詳細ドキュメントを http://www.slideshare.net/kunishi/pcd-37446278 に置いているので、合わせて参照されたい。
 ----------
-�� ���� ��
+◇ 履歴 ◇
